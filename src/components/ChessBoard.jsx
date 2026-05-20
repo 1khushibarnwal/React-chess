@@ -96,7 +96,7 @@ function ChessBoard() {
     <>
       <h2>Turn: {turn === "w" ? "White" : "Black"}</h2>
 
-      {check && !winner && <h2>CHECK!</h2>}
+      {check && !winner && <div className="check-alert">⚠ CHECK ⚠</div>}
 
       {winner && (
         <div className="winner-modal">
