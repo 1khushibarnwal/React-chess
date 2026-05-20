@@ -19,6 +19,8 @@ function ChessBoard() {
   const [check, setCheck] = useState(null);
   const [theme, setTheme] = useState("classic");
   const [resetting, setResetting] = useState(false);
+  const [history, setHistory] = useState([]);
+  const [showHistory, setShowHistory] = useState(false);
 
   const newGame = () => {
     setResetting(true);
@@ -30,6 +32,8 @@ function ChessBoard() {
       setTurn("w");
       setWinner(null);
       setCheck(null);
+      setHistory([]);
+      setShowHistory(false);
       setResetting(false);
     }, 700);
   };
@@ -70,6 +74,12 @@ function ChessBoard() {
         newBoard[row][col] = movingPiece;
         newBoard[selected.row][selected.col] = "";
 
+        const moveText = `${movingPiece.toUpperCase()} : ${String.fromCharCode(
+          97 + selected.col,
+        )}${8 - selected.row} → ${String.fromCharCode(97 + col)}${8 - row}`;
+
+        setHistory((prev) => [...prev, moveText]);
+
         const nextTurn = turn === "w" ? "b" : "w";
 
         setBoard(newBoard);
@@ -102,6 +112,26 @@ function ChessBoard() {
         <div className="winner-modal">
           <h1>{winner} Wins!</h1>
           <button onClick={newGame}>Play Again</button>
+        </div>
+      )}
+
+      {showHistory && (
+        <div className="history-modal">
+          <div className="history-box">
+            <h2>Move History</h2>
+
+            {history.length === 0 ? (
+              <p>No moves yet</p>
+            ) : (
+              history.map((move, index) => (
+                <div key={index} className="move-item">
+                  <span>{index + 1}.</span> {move}
+                </div>
+              ))
+            )}
+
+            <button onClick={() => setShowHistory(false)}>Close</button>
+          </div>
         </div>
       )}
 
@@ -138,6 +168,8 @@ function ChessBoard() {
           }),
         )}
       </div>
+
+      <button onClick={() => setShowHistory(true)}>Move History</button>
 
       <button onClick={newGame}>New Game</button>
     </>
