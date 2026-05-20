@@ -47,3 +47,66 @@ body {
 .highlight {
   box-shadow: inset 0 0 0 6px rgba(0, 255, 0, 0.45);
 }
+
+.white-piece {
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+
+.black-piece {
+  color: black;
+  text-shadow: 1px 1px 2px white;
+}
+
+.classic .light {
+  background: #f0d9b5;
+}
+.classic .dark {
+  background: #b58863;
+}
+
+.bw .light {
+  background: #eee;
+}
+.bw .dark {
+  background: #222;
+}
+
+.gold .light {
+  background: #fff8dc;
+}
+.gold .dark {
+  background: #d4af37;
+}
+
+.ocean .light {
+  background: #dff6ff;
+}
+.ocean .dark {
+  background: #3f72af;
+}
+
+.winner-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.reset-anim {
+  animation: resetSpin 0.7s ease;
+}
+
+@keyframes resetSpin {
+  from {
+    transform: scale(0.3) rotate(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) rotate(360deg);
+    opacity: 1;
+  }
+}

@@ -37,9 +37,85 @@ export function isValidMove(piece, from, to, board, turn) {
   }
 }
 
+export function cloneBoard(board) {
+  return board.map((r) => [...r]);
+}
+
+export function isKingInCheck(board, color) {
+  let king;
+
+  for (let r = 0; r < 8; r++) {
+    for (let c = 0; c < 8; c++) {
+      if (board[r][c] === `${color}k`) {
+        king = { row: r, col: c };
+      }
+    }
+  }
+
+  const enemy = color === "w" ? "b" : "w";
+
+  for (let r = 0; r < 8; r++) {
+    for (let c = 0; c < 8; c++) {
+      const piece = board[r][c];
+
+      if (
+        piece &&
+        piece[0] === enemy &&
+        isValidMove(piece, { row: r, col: c }, king, board, enemy)
+      ) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+}
+
+export function wouldBeInCheck(board, from, to, color) {
+  const newBoard = cloneBoard(board);
+
+  newBoard[to.row][to.col] = newBoard[from.row][from.col];
+  newBoard[from.row][from.col] = "";
+
+  return isKingInCheck(newBoard, color);
+}
+
+export function isCheckmate(board, color) {
+  for (let r = 0; r < 8; r++) {
+    for (let c = 0; c < 8; c++) {
+      const piece = board[r][c];
+
+      if (piece && piece[0] === color) {
+        for (let nr = 0; nr < 8; nr++) {
+          for (let nc = 0; nc < 8; nc++) {
+            if (
+              isValidMove(
+                piece,
+                { row: r, col: c },
+                { row: nr, col: nc },
+                board,
+                color,
+              ) &&
+              !wouldBeInCheck(
+                board,
+                { row: r, col: c },
+                { row: nr, col: nc },
+                color,
+              )
+            ) {
+              return false;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  return true;
+}
+
 function validatePawn(color, rowDiff, colDiff, from, to, board) {
   const direction = color === "w" ? -1 : 1;
-
   const target = board[to.row][to.col];
 
   if (colDiff === 0 && !target) {

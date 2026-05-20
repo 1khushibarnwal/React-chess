@@ -15,7 +15,13 @@ const symbols = {
 };
 
 function Piece({ type }) {
-  return <span className="piece">{symbols[type]}</span>;
+  const isWhite = type[0] === "w";
+
+  return (
+    <span className={`piece ${isWhite ? "white-piece" : "black-piece"}`}>
+      {symbols[type]}
+    </span>
+  );
 }
 
 export default Piece;
