@@ -169,6 +169,9 @@ CheckVerse was built to go beyond a basic tutorial implementation and explore:
 <h3>Win message:</h3>
 <img width="603" height="740" alt="image" src="https://github.com/user-attachments/assets/cc351cba-d5bf-4c8c-934e-90e7c0cd899d" />
 
+<h3>Moves History:</h3>
+<h6>NOTE: Added later on.</h6>
+<img width="680" height="812" alt="image" src="https://github.com/user-attachments/assets/1f3178c4-20c4-45ac-b9d6-f75b3b14afe3" />
 
 ---
 
@@ -179,7 +182,7 @@ Planned upgrades:
 - Castling
 - En passant
 - Pawn promotion
-- Move history
+- Move history ✅
 - Undo / Redo
 - AI opponent
 - Multiplayer mode
