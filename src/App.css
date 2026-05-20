@@ -17,22 +17,31 @@ body {
 /* TITLE */
 
 h1 {
-  font-size: 4rem;
-  margin: 20px 0 10px;
-  line-height: 1.2;
+  font-size: 5rem;
+  font-weight: 900;
 
-  background: linear-gradient(90deg, #ffffff, #a78bfa, #7c3aed);
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  margin: 18px 0 8px;
 
   letter-spacing: 4px;
 
+  line-height: 1.35;
+
+  color: #c084fc;
+
   text-align: center;
 
-  padding: 12px;
+  text-shadow:
+    0 0 8px rgba(192, 132, 252, 0.45),
+    0 0 18px rgba(124, 58, 237, 0.35),
+    0 0 35px rgba(124, 58, 237, 0.25);
+
+  animation: glowLogo 3s ease-in-out infinite;
 
   overflow: visible;
+
+  position: relative;
+
+  z-index: 10;
 }
 
 h2 {
@@ -344,4 +353,38 @@ button:active {
   to {
     opacity: 1;
   }
+}
+
+@keyframes glowLogo {
+  0%,
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 0.92;
+    transform: translateY(-2px);
+  }
+}
+
+.logo-icon {
+  width: 90px;
+  height: 90px;
+
+  margin: auto;
+
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 3rem;
+
+  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+
+  box-shadow: 0 0 35px rgba(124, 58, 237, 0.4);
+
+  animation: floatBoard 4s ease-in-out infinite;
 }

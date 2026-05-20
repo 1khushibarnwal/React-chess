@@ -4,7 +4,8 @@ import "./App.css";
 function App() {
   return (
     <div className="app">
-      <h1>CHESS</h1>
+      <div className="logo-icon">♔</div>
+      <h1>CheckVerse</h1>
       <ChessBoard />
     </div>
   );
