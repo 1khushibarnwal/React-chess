@@ -1,16 +1,200 @@
-# React + Vite
+# ♔ CheckVerse
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sleek, interactive chess game built with **React + JSX**, featuring animated gameplay, multiple board themes, move validation, check/checkmate detection, winner screens, and polished UI effects.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+### ♟ Core Chess Logic
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Turn-based gameplay
+- Legal move validation
+- Piece-specific movement rules
+- Move highlighting
+- Check detection
+- Checkmate detection
+- Winner announcement modal
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🎨 Theme Customization
+
+Choose from multiple elegant board themes:
+
+- Brown & White
+- Black & White
+- Cream & Gold
+- Ocean Blue
+- Light Green & Cream
+- Pink & White
+
+---
+
+### ⚡ Smooth UI Experience
+
+- Animated floating board
+- Neon-glow branding
+- Interactive hover effects
+- Animated reset transitions
+- Stylish winner modal
+- Responsive polished controls
+
+---
+
+## 🛠 Built With
+
+- **React**
+- **JSX**
+- **CSS3**
+- **Vite**
+
+---
+
+## 🚀 Installation
+
+Clone the repo:
+
+```bash
+git clone https://github.com/your-username/checkverse.git
+```
+
+Move into project folder:
+
+```bash
+cd checkverse
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run locally:
+
+```bash
+npm run dev
+```
+
+Open:
+
+```arduino
+http://localhost:5173
+```
+
+---
+
+## 🎮 How to Play
+
+### Select a Piece
+
+Click any valid piece for the current player.
+
+### View Valid Moves
+
+Allowed moves are highlighted.
+
+### Make a Move
+
+Click a highlighted square.
+
+### Win
+
+Force checkmate to trigger the winner screen.
+
+### Restart
+
+Click **New Game** anytime.
+
+---
+
+## 📂 Project Structure
+
+```plaintext
+src/
+ ├── components/
+ │   ├── ChessBoard.jsx
+ │   ├── Square.jsx
+ │   └── Piece.jsx
+ │
+ ├── data/
+ │   └── initialBoard.js
+ │
+ ├── utils/
+ │   └── moveValidation.js
+ │
+ ├── App.jsx
+ ├── App.css
+ └── main.jsx
+```
+
+---
+
+## 🧠 Technical Highlights
+
+This project implements:
+
+- Board cloning for move simulation
+- Check safety validation
+- Dynamic theme switching
+- Chess rule enforcement logic
+- State-driven UI rendering
+- Reset animation lifecycle management
+
+---
+
+## 🔥 Why This Project?
+
+CheckVerse was built to go beyond a basic tutorial implementation and explore:
+
+- Complex React state management
+- Game logic architecture
+- UI animation systems
+- Interactive frontend engineering
+
+---
+
+## 📸 Preview
+
+_Add screenshots here_
+
+Example:
+
+```md
+![CheckVerse Screenshot](./preview.png)
+```
+
+---
+
+## 🌌 Future Improvements
+
+Planned upgrades:
+
+- Castling
+- En passant
+- Pawn promotion
+- Move history
+- Undo / Redo
+- AI opponent
+- Multiplayer mode
+- Sound effects
+- Timer modes
+
+---
+
+## 👑 Author
+
+Built with React and tactical suffering.
+
+**Khushi Barnwal**
+
+---
+
+## ⭐ Support
+
+If you like this project:
+
+Give it a star ⭐
+
+Because every chess engine deserves emotional validation.
